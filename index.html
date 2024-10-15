@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="page-header">
+      <header>
+        <button class="btn">Log Out</button>
+      </header>
+    </section>
+    <section class="not-header" id="form-section">
+      <h3 class="h-big">October 15 2024</h3>
+      <div class="form-container">
+        <form action="" method="" id="add-transaction">
+          <select name="" id="transaction-type">
+            <option value="" disabled selected hidden>Transaction type</option>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+          <input
+            type="number"
+            id="transcation-amount"
+            placeholder="Amount in Ksh"
+          />
+          <input
+            type="text"
+            id="transaction-category"
+            placeholder="Category eg Groceries, Car repair"
+          />
+          <input type="date" name="" id="transaction-date" />
+          <textarea
+            name=""
+            id="transaction-description"
+            placeholder="Description"
+          ></textarea>
+          <button type="submit" class="btn">Add Transaction</button>
+        </form>
+      </div>
+    </section>
+    <section class="not-header" id="cards-container">
+      <div class="search-transcation">
+        <form action="">
+          <input
+            type="text"
+            id="search-transcation-input"
+            placeholder="search for transaction"
+            required
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+      <div class="card">
+        <table>
+          <thead>
+            <tr id="card-details">
+              <th>Type</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="transaction-summary">
+        <h3 class="h-medium">
+          Income: <span id="income-summary" class="h-big">500000</span>
+        </h3>
+        <h3 class="h-medium">
+          Expenses: <span id="expense-summary" class="h-big">70000</span>
+        </h3>
+        <h3 class="h-medium">
+          Balance: <span id="balance" class="h-big">430000</span>
+        </h3>
+      </div>
+    </section>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
