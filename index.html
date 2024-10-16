@@ -23,7 +23,7 @@
     <section class="not-header" id="form-section">
       <h3 class="h-big">October 15 2024</h3>
       <div class="form-container">
-        <form action="" method="" id="add-transaction">
+        <form action="" method="" id="add-transaction" autocomplete="off">
           <select name="" id="transaction-type">
             <option value="" disabled selected hidden>Transaction type</option>
             <option value="Income">Income</option>
@@ -50,8 +50,8 @@
       </div>
     </section>
     <section class="not-header" id="cards-container">
-      <div class="search-transcation">
-        <form action="">
+      <div class="search-transcation-container">
+        <form action="" id="search-transcation" autocomplete="off">
           <input
             type="text"
             id="search-transcation-input"
@@ -86,6 +86,32 @@
         <h3 class="h-medium">
           Balance: <span id="balance" class="h-big">430000</span>
         </h3>
+      </div>
+    </section>
+    <section class="not-header hidden" id="edit-transaction-form-section">
+        <button id="close-form"><i class="fa-solid fa-xmark"></i></button>
+      <div class="edit-form-container">
+        <form action="" id="edit-transaction-form" autocomplete="off" >
+          <h3 class="h-big">Edit transaction</h3>
+          <!-- <div class="transaction-details">
+            <ul class="transaction-details-list"></ul>
+          </div> -->
+          <select name="" id="edit-type">
+            <option value="" disabled selected hidden>
+              New transaction type
+            </option>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+          <input type="text" placeholder="New Amount" id="edit-amount" />
+          <input type="text" placeholder="New Category" id="edit-category" />
+          <textarea
+            name=""
+            id="edit-description"
+            placeholder="New Description"
+          ></textarea>
+          <button type="submit" class="btn">Edit Transaction</button>
+        </form>
       </div>
     </section>
     <script src="./js/index.js"></script>

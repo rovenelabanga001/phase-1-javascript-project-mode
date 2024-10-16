@@ -1,5 +1,6 @@
 const formAddTransaction = document.querySelector("#add-transaction");
 formAddTransaction.addEventListener("submit", handleSubmit);
+const baseURL = "https://my-json-server.typicode.com/rovenelabanga001/phase-1-javascript-project-mode/transcations";
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -35,10 +36,53 @@ function renderTransaction(transaction) {
   );
   deleteTransactionButton.addEventListener("click", (e) => {
     e.target.closest(".transaction-body").remove();
-    deleteTransaction(transaction.id)
+    e.stopPropagation();
+    deleteTransaction(transaction.id);
+  });
+  transactionBody.addEventListener("click", () => {
+    //call showEditForm here
+    showEditForm(transaction);
   });
   tableBody.appendChild(transactionBody);
 }
+
+function showEditForm(transaction) {
+  const formContainer = document.getElementById(
+    "edit-transaction-form-section"
+  );
+  //populate the form with current transaction details
+  transaction.type = document.querySelector("#edit-type").value;
+  transaction.amount = document.querySelector("#edit-amount").value;
+  transaction.category = document.querySelector("#edit-category").value;
+  transaction.description = document.querySelector("#edit-description").value;
+
+  //show the form(current display is none to hide it)
+  formContainer.style.display = "flex";
+
+  ul = editForm.querySelector("#transaction-details-list");
+  ul.appendChild(transaction.type);
+}
+
+const editForm = document.querySelector("#edit-transaction-form");
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const updateDTransaction = {
+    type: e.target["edit-type"].value,
+    amount: e.target["edit-amount"].value,
+    category: e.target["edit-category"].value,
+    description: e.target["edit-description"].value,
+  };
+});
+
+function closeEditForm() {
+  const formContainer = document.querySelector(
+    "#edit-transaction-form-section"
+  );
+  formContainer.style.display = "none";
+}
+const closeEditFormBtn = document.querySelector("#close-form");
+closeEditFormBtn.addEventListener("click", closeEditForm);
 
 function getTransactions() {
   fetch("http://localhost:3000/transcations", {

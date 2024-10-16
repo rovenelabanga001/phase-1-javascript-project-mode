@@ -25,6 +25,7 @@ body {
   padding: 10px;
   border: 1px solid white;
   color: white;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
@@ -57,17 +58,17 @@ body {
 #form-section h3 {
   text-align: center;
 }
-#form-section .form-container form {
+#form-section .form-container form#add-transaction {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40 0px;
   gap: 20px;
 }
-#form-section .form-container form select,
-input,
-textarea {
-  width: 70%;
+#form-section .form-container form#add-transaction select,
+#form-section .form-container form#add-transaction input,
+#form-section .form-container form#add-transaction textarea {
+  width: 80%;
   border-radius: 10px;
   height: 40px;
   border: 1px solid transparent;
@@ -77,16 +78,16 @@ textarea {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
 }
-#form-section .form-container form select:focus,
-input:focus,
-textarea:focus {
+#form-section .form-container form#add-transaction select:focus,
+#form-section .form-container form#add-transaction input:focus,
+#form-section .form-container form#add-transaction textarea:focus {
   border: 2px solid rgb(45, 188, 45);
 }
-#form-section .form-container form select {
+#form-section .form-container form#add-transaction select {
   font-family: "Poppins", sans-serif;
   color: rgb(45, 188, 45);
 }
-#form-section .form-container form select option {
+#form-section .form-container form#add-transaction select option {
   padding: 10px;
   font-size: 15px;
   color: rgb(45, 188, 45);
@@ -94,18 +95,16 @@ textarea:focus {
 /* #form-section .form-container form #transaction-date::before{
 
 } */
-#form-section .form-container form textarea {
+#form-section .form-container form#add-transaction textarea {
   height: 80px;
 }
-#form-section .form-container form input::placeholder {
+#form-section .form-container form#add-transaction input::placeholder {
   color: rgb(45, 188, 45);
   font-size: 15px;
   font-family: "Poppins", sans-serif;
 }
-#form-section .form-container form #transaction-date::placeholder {
-  color: rgb(45, 188, 45);
-}
-#form-section .form-container form textarea::placeholder {
+
+#form-section .form-container form#add-transaction textarea::placeholder {
   color: rgb(45, 188, 45);
   font-size: 15px;
   font-family: "Poppins", sans-serif;
@@ -115,27 +114,49 @@ textarea:focus {
   flex-direction: column;
   gap: 30px;
 }
-#cards-container .search-transcation {
+#cards-container .search-transcation-container {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-#cards-container .search-transcation form input {
+#cards-container .search-transcation-container form#search-transcation input {
   width: 80%;
+  height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgba(243, 245, 242, 0.594);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0 0 0 5px;
 }
-#cards-container .search-transcation form input::placeholder {
+#cards-container
+  .search-transcation-container
+  form#search-transcation
+  input:focus {
+  border: 2px solid rgb(45, 188, 45);
+}
+#cards-container
+  .search-transcation-container
+  form#search-transcation
+  input::placeholder {
   color: rgb(45, 188, 45);
 }
-#cards-container .search-transcation form button {
+#cards-container .search-transcation-container form#search-transcation button {
   height: 40px;
   width: 40px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
-#cards-container .search-transcation form button i {
+#cards-container
+  .search-transcation-container
+  form#search-transcation
+  button
+  i {
   color: rgb(45, 188, 45);
 }
 #cards-container .card {
@@ -184,4 +205,133 @@ td {
 }
 #cards-container .transaction-summary span {
   font-size: 25px;
+}
+#edit-transaction-form-section {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  background: rgb(45, 188, 45);
+  border: none;
+}
+
+#edit-transaction-form-section button#close-form {
+  position: absolute;
+  right: 80px;
+  top: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#edit-transaction-form-section button#close-form i {
+  color: white;
+  font-size: 30px;
+}
+#edit-transaction-form-section .edit-form-container form#edit-transaction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 700px;
+}
+#edit-transaction-form-section form#edit-transaction-form h3 {
+  text-align: center;
+  color: white;
+}
+/* #edit-transaction-form-section form#edit-transaction-form .transaction-details {
+  height: 50px;
+  width: 80%;
+  background-color: white;
+} */
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  select,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  input,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  textarea {
+  width: 80%;
+  border-radius: 10px;
+  height: 40px;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 10px 20px;
+  background: rgba(243, 245, 242, 0.272);
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  select:focus,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  input:focus,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  textarea:focus {
+  border: 2px solid white;
+}
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  textarea {
+  height: 80px;
+}
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  input::placeholder,
+textarea::placeholder,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  select,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  input,
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  textarea {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  select
+  option {
+  color: white;
+  background: rgb(45, 188, 45);
+}
+#edit-transaction-form-section
+  .edit-form-container
+  form#edit-transaction-form
+  select
+  option:focus {
+  color: rgb(45, 188, 45);
+}
+.hidden {
+  display: none;
+}
+.blurred {
+  filter: blur(5px);
 }
