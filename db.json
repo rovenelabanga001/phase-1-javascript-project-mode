@@ -1,12 +1,28 @@
 {
-  "transcations": [
+  "transactions": [
     {
-      "id": "1",
-      "type": "Income",
-      "amount": 200000,
-      "category": "Salary",
-      "date": "10/15/2024",
-      "description": "October Salary"
+      "id": "e0c9",
+      "type": "Expense",
+      "amount": "29000",
+      "category": "Health care",
+      "date": "2024-10-16",
+      "description": "Little brother's monthly dental check up"
+    },
+    {
+      "id": "295e",
+      "type": "Expense",
+      "amount": "29000",
+      "category": "Health care",
+      "date": "2024-10-14",
+      "description": "Little brother's monthly dental check up"
+    },
+    {
+      "id": "da44",
+      "type": "Expense",
+      "amount": "29000",
+      "category": "Health care",
+      "date": "2024-10-16",
+      "description": "Little brother's monthly dental check up"
     }
   ]
 }
