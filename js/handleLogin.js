@@ -88,6 +88,20 @@ function loadUserTransactions(userId) {
     .catch((error) => console.error("Error loading transactions", error));
 }
 
+document.getElementById("log-out-btn").addEventListener("click", () => {
+  const currentFilter = document.querySelector(
+    "#search-transcation-input"
+  ).value;
+  localStorage.setItem("currentFilter", currentFilter);
+
+  localStorage.removeItem("currentUser");
+
+  document.querySelector("main").style.display = "none";
+  loginContainer.style.display = "flex";
+
+  alert("You have been logged out!");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   //Check if user is already logged in on page load
 
@@ -96,6 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
     loginContainer.style.display = "none";
     document.querySelector("main").style.display = "block";
     loadUserTransactions(currentUser.id);
+
+    const savedFilter = localStorage.getItem("currentFilter");
+    if (savedFilter) {
+      document.querySelector("#search-transcation-input").value = savedFilter;
+    }
   } else {
     document.querySelector("main").style.display = "none"; //hide main content untill login
   }
