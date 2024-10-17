@@ -1,12 +1,7 @@
-// Load environment variables from .env file
-require('dotenv').config();
-
 const formAddTransaction = document.querySelector("#add-transaction");
 formAddTransaction.addEventListener("submit", handleSubmit);
 
-// Use the JSONBin URL for your private bin
-const baseURL = "https://api.jsonbin.io/v3/b/6710efc1acd3cb34a89887b2"; // Private bin URL
-const masterKey = process.env.MASTER_KEY; // Access the master key from the environment variable
+const baseURL = "http://localhost:3000/transactions";
 let transactions = [];
 
 function handleSubmit(event) {
@@ -18,8 +13,9 @@ function handleSubmit(event) {
     date: event.target["transaction-date"].value,
     description: event.target["transaction-description"].value,
   };
-
+  // renderTransaction(transactionObj);
   addTransaction(transactionObj);
+
   event.target.reset();
 }
 
@@ -51,6 +47,7 @@ function renderTransaction(transaction) {
     deleteTransaction(transaction.id);
   });
   transactionBody.addEventListener("click", () => {
+    //call showEditForm here
     showEditForm(transaction);
   });
 
@@ -61,11 +58,13 @@ function showEditForm(transaction) {
   const formContainer = document.getElementById(
     "edit-transaction-form-section"
   );
+  //populate the form with current transaction details
   document.querySelector("#edit-type").value = transaction.type;
   document.querySelector("#edit-amount").value = transaction.amount;
   document.querySelector("#edit-category").value = transaction.category;
   document.querySelector("#edit-description").value = transaction.description;
 
+  //show the form(current display is none to hide it)
   formContainer.style.display = "flex";
 
   const editForm = document.querySelector("#edit-transaction-form");
@@ -89,7 +88,6 @@ function closeEditForm() {
   );
   formContainer.style.display = "none";
 }
-
 const closeEditFormBtn = document.querySelector("#close-form");
 closeEditFormBtn.addEventListener("click", closeEditForm);
 
@@ -99,13 +97,12 @@ function getTransactions() {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      "X-Master-Key": masterKey // Use the master key from the environment variable
     },
   })
     .then((response) => response.json())
     .then((transactionData) => {
-      transactions = transactionData.record; // Adjust based on the API response structure
-      transactionData.record.forEach((transaction) => renderTransaction(transaction));
+      transactions = transactionData;
+      transactionData.forEach((transaction) => renderTransaction(transaction));
       updateTransactionSummaryFromTable();
     })
     .catch((error) => console.error("Error fetching transactions:", error));
@@ -117,7 +114,6 @@ function addTransaction(transaction) {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      "X-Master-Key": masterKey // Use the master key from the environment variable
     },
     body: JSON.stringify(transaction),
   })
@@ -131,12 +127,11 @@ function addTransaction(transaction) {
 }
 
 function deleteTransaction(id) {
-  fetch(`${baseURL}`, {
+  fetch(`${baseURL}/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      "X-Master-Key": masterKey // Use the master key from the environment variable
     },
   })
     .then((response) => response.json())
@@ -150,12 +145,12 @@ function deleteTransaction(id) {
 }
 
 function updateTransaction(id, updatedTransaction) {
-  fetch(`${baseURL}`, {
+  console.log(id);
+  fetch(`${baseURL}/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      "X-Master-Key": masterKey // Use the master key from the environment variable
     },
     body: JSON.stringify(updatedTransaction),
   })
@@ -166,7 +161,6 @@ function updateTransaction(id, updatedTransaction) {
     })
     .catch((error) => console.error("Error updating transaction:", error));
 }
-
 function getDate() {
   const dateElement = document.querySelector("#date-today");
   const today = new Date();
@@ -232,10 +226,11 @@ function updateTransactionSummaryFromTable() {
     }
   });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.getElementById("search-transcation");
+  const filterForm = document.getElementById("filter-by-type");
   searchForm.addEventListener("input", handleSearch);
   getTransactions();
   getDate();
+  console.log(transactions);
 });
