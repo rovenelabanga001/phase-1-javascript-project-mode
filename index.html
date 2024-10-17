@@ -15,15 +15,23 @@
     />
   </head>
   <body>
-    <section id="log-in-form-section">
+    <!-- <section id="log-in-form-section">
       <div class="log-in-form-container" id="login-container">
-        <form action="" id="log-in-form">
-          <input type="text" placeholder="Enter Username" id="enter-username" />
+        <form action="" id="log-in-form" autocomplete="off">
+          <h3 class="h-big">Sign In</h3>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="enter-username"
+            required
+          />
           <input type="email" placeholder="Enter email" id="enter-email" />
           <input
             type="password"
             placeholder="Enter Password"
             id="enter-password"
+            required
+            autocomplete="on"
           />
           <button type="submit" class="btn">Login</button>
           <p>
@@ -33,24 +41,33 @@
         </form>
       </div>
       <div class="log-in-form-container" id="create-account-container">
-        <form action="" id="create-account-form">
+        <form action="" id="create-account-form" autocomplete="">
+          <h3 class="h-big">Sign Up</h3>
           <input
             type="text"
             id="create-username"
             placeholder="Create username"
+            required
           />
-          <input type="email" id="create-email" placeholder="Create email" />
+          <input
+            type="email"
+            id="create-email"
+            placeholder="Create email"
+            required
+          />
           <input
             type="password"
             id="create-password"
             placeholder="Create Password"
+            required
+            autocomplete="on"
           />
           <button type="submit" class="btn">Create Account</button>
           <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
         </form>
       </div>
-    </section>
-    <main class="hidden">
+    </section> -->
+    <main class="">
       <section id="page-header">
         <header>
           <button class="btn" id="log-out-btn">Log Out</button>
@@ -89,16 +106,18 @@
       </section>
       <section class="not-header" id="cards-container">
         <div class="search-transcation-container">
-          <form action="" id="search-transcation" autocomplete="off">
+          <form
+            action=""
+            id="search-transcation"
+            class="forms"
+            autocomplete="off"
+          >
             <input
               type="text"
               id="search-transcation-input"
-              placeholder="search for transaction"
+              placeholder="filter by type or category"
               required
             />
-            <button>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
           </form>
         </div>
         <div class="card">
@@ -109,20 +128,21 @@
                 <th>Category</th>
                 <th>Date</th>
                 <th>Amount</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody id="table-body"></tbody>
           </table>
         </div>
         <div class="transaction-summary">
-          <h3 class="h-medium">
-            Income: <span id="income-summary" class="h-big">500000</span>
+          <h3 class="h-medium" id="income-total">
+            Income: <span id="income-summary" class="h-big"></span>
           </h3>
-          <h3 class="h-medium">
-            Expenses: <span id="expense-summary" class="h-big">70000</span>
+          <h3 class="h-medium" id="expenses-total">
+            Expenses: <span id="expense-summary" class="h-big"></span>
           </h3>
-          <h3 class="h-medium">
-            Balance: <span id="balance" class="h-big">430000</span>
+          <h3 class="h-medium" id="difference">
+            Balance: <span id="balance" class="h-big"></span>
           </h3>
         </div>
       </section>
@@ -131,9 +151,6 @@
         <div class="edit-form-container">
           <form action="" id="edit-transaction-form" autocomplete="off">
             <h3 class="h-big">Edit transaction</h3>
-            <!-- <div class="transaction-details">
-            <ul class="transaction-details-list"></ul>
-          </div> -->
             <select name="" id="edit-type">
               <option value="" disabled selected hidden>
                 New transaction type
@@ -154,6 +171,5 @@
       </section>
     </main>
     <script src="./js/index.js"></script>
-    <script src="./js/handleLogin.js"></script>
   </body>
 </html>

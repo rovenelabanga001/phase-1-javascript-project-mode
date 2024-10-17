@@ -21,12 +21,60 @@
   ],
   "transactions": [
     {
-      "id": "295e",
+      "id": "648c",
+      "type": "Income",
+      "amount": "200000",
+      "category": "Salary",
+      "date": "2024-10-16",
+      "description": "Sep salary"
+    },
+    {
+      "id": "a43f",
       "type": "Expense",
-      "amount": "31000",
-      "category": "Health care",
-      "date": "2024-10-14",
-      "description": "Little brother's monthly dental check up"
+      "amount": "10000",
+      "category": "Healthcare",
+      "date": "2024-10-09",
+      "description": "Bro's monthly dental check up"
+    },
+    {
+      "id": "126d",
+      "type": "Expense",
+      "amount": "20000",
+      "category": "rent",
+      "date": "2024-10-09",
+      "description": "September rent"
+    },
+    {
+      "id": "d1df",
+      "type": "Income",
+      "amount": "20000",
+      "category": "Bet",
+      "date": "2024-10-15",
+      "description": "Bet win"
+    },
+    {
+      "id": "7a19",
+      "type": "Expense",
+      "amount": "10000",
+      "category": "Shopping",
+      "date": "2024-10-08",
+      "description": "Essentials supply"
+    },
+    {
+      "id": "6368",
+      "type": "Expense",
+      "amount": "3500",
+      "category": "Internet",
+      "date": "2024-10-11",
+      "description": "October internet subscription fee"
+    },
+    {
+      "id": "edfe",
+      "type": "Expense",
+      "amount": "80000",
+      "category": "Fees",
+      "date": "2024-10-18",
+      "description": "Second semester fees"
     }
   ]
 }

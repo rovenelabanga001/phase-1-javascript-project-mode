@@ -105,17 +105,16 @@ document.getElementById("log-out-btn").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   //Check if user is already logged in on page load
 
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  if (currentUser) {
-    loginContainer.style.display = "none";
-    document.querySelector("main").style.display = "block";
-    loadUserTransactions(currentUser.id);
+  //   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  //   if (currentUser) {
+  //     loginContainer.style.display = "none";
+  //     document.querySelector("main").style.display = "block";
+  //     loadUserTransactions(currentUser.id);
 
-    const savedFilter = localStorage.getItem("currentFilter");
-    if (savedFilter) {
-      document.querySelector("#search-transcation-input").value = savedFilter;
-    }
-  } else {
-    document.querySelector("main").style.display = "none"; //hide main content untill login
-  }
+  //     const savedFilter = localStorage.getItem("currentFilter");
+  //     if (savedFilter) {
+  //       document.querySelector("#search-transcation-input").value = savedFilter;
+  //     }
+  //   } else {}
+  document.querySelector("main").style.display = "none"; //hide main content untill login
 });
