@@ -1,27 +1,31 @@
 {
-  "transactions": [
+  "users": [
     {
-      "id": "e0c9",
-      "type": "Expense",
-      "amount": "29000",
-      "category": "Health care",
-      "date": "2024-10-16",
-      "description": "Little brother's monthly dental check up"
+      "id": 1,
+      "username": "johnDoe",
+      "password": "password123",
+      "email": "johndoe@gmail.com"
     },
+    {
+      "id": 2,
+      "username": "janeSmith",
+      "password": "password123",
+      "email": "janesmith@yahoo.com1"
+    },
+    {
+      "id": "7fa6",
+      "username": "johnDrew",
+      "email": "johnDrew@gmail.com",
+      "password": "password123"
+    }
+  ],
+  "transactions": [
     {
       "id": "295e",
       "type": "Expense",
-      "amount": "29000",
+      "amount": "31000",
       "category": "Health care",
       "date": "2024-10-14",
-      "description": "Little brother's monthly dental check up"
-    },
-    {
-      "id": "da44",
-      "type": "Expense",
-      "amount": "29000",
-      "category": "Health care",
-      "date": "2024-10-16",
       "description": "Little brother's monthly dental check up"
     }
   ]

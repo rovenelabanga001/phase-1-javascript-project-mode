@@ -149,10 +149,24 @@ function updateTransaction(id, updatedTransaction) {
   })
     .then((response) => response.json())
     .then((transaction) => {
-      console.log("Transaction updated:", transaction)
+      console.log("Transaction updated:", transaction);
     })
     .catch((error) => console.error("Error updating transaction:", error));
 }
+function getDate() {
+  const dateElement = document.querySelector("#date-today");
+  const today = new Date();
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  const formattedDate = today.toLocaleDateString("en-US", options);
+  dateElement.textContent = formattedDate;
+}
 document.addEventListener("DOMContentLoaded", () => {
   getTransactions();
+  getDate();
 });

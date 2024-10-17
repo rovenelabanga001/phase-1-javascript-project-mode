@@ -15,105 +15,145 @@
     />
   </head>
   <body>
-    <section id="page-header">
-      <header>
-        <button class="btn">Log Out</button>
-      </header>
-    </section>
-    <section class="not-header" id="form-section">
-      <h3 class="h-big">October 15 2024</h3>
-      <div class="form-container">
-        <form action="" method="" id="add-transaction" autocomplete="off">
-          <select name="" id="transaction-type">
-            <option value="" disabled selected hidden>Transaction type</option>
-            <option value="Income">Income</option>
-            <option value="Expense">Expense</option>
-          </select>
+    <section id="log-in-form-section">
+      <div class="log-in-form-container" id="login-container">
+        <form action="" id="log-in-form">
+          <input type="text" placeholder="Enter Username" id="enter-username" />
+          <input type="email" placeholder="Enter email" id="enter-email" />
           <input
-            type="number"
-            id="transcation-amount"
-            placeholder="Amount in Ksh"
+            type="password"
+            placeholder="Enter Password"
+            id="enter-password"
           />
+          <button type="submit" class="btn">Login</button>
+          <p>
+            Don't have an account?
+            <a href="#" id="show-create-account">Create one</a>
+          </p>
+        </form>
+      </div>
+      <div class="log-in-form-container" id="create-account-container">
+        <form action="" id="create-account-form">
           <input
             type="text"
-            id="transaction-category"
-            placeholder="Category eg Groceries, Car repair"
+            id="create-username"
+            placeholder="Create username"
           />
-          <input type="date" name="" id="transaction-date" />
-          <textarea
-            name=""
-            id="transaction-description"
-            placeholder="Description"
-          ></textarea>
-          <button type="submit" class="btn">Add Transaction</button>
+          <input type="email" id="create-email" placeholder="Create email" />
+          <input
+            type="password"
+            id="create-password"
+            placeholder="Create Password"
+          />
+          <button type="submit" class="btn">Create Account</button>
+          <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
         </form>
       </div>
     </section>
-    <section class="not-header" id="cards-container">
-      <div class="search-transcation-container">
-        <form action="" id="search-transcation" autocomplete="off">
-          <input
-            type="text"
-            id="search-transcation-input"
-            placeholder="search for transaction"
-            required
-          />
-          <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-      <div class="card">
-        <table>
-          <thead>
-            <tr id="card-details">
-              <th>Type</th>
-              <th>Category</th>
-              <th>Date</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody id="table-body"></tbody>
-        </table>
-      </div>
-      <div class="transaction-summary">
-        <h3 class="h-medium">
-          Income: <span id="income-summary" class="h-big">500000</span>
-        </h3>
-        <h3 class="h-medium">
-          Expenses: <span id="expense-summary" class="h-big">70000</span>
-        </h3>
-        <h3 class="h-medium">
-          Balance: <span id="balance" class="h-big">430000</span>
-        </h3>
-      </div>
-    </section>
-    <section class="not-header hidden" id="edit-transaction-form-section">
-      <button id="close-form"><i class="fa-solid fa-xmark"></i></button>
-      <div class="edit-form-container">
-        <form action="" id="edit-transaction-form" autocomplete="off">
-          <h3 class="h-big">Edit transaction</h3>
-          <!-- <div class="transaction-details">
+    <main class="hidden">
+      <section id="page-header">
+        <header>
+          <button class="btn">Log Out</button>
+        </header>
+      </section>
+      <section class="not-header" id="form-section">
+        <h3 class="h-big" id="date-today"></h3>
+        <div class="form-container">
+          <form action="" method="" id="add-transaction" autocomplete="off">
+            <select name="" id="transaction-type">
+              <option value="" disabled selected hidden>
+                Transaction type
+              </option>
+              <option value="Income">Income</option>
+              <option value="Expense">Expense</option>
+            </select>
+            <input
+              type="number"
+              id="transcation-amount"
+              placeholder="Amount in Ksh"
+            />
+            <input
+              type="text"
+              id="transaction-category"
+              placeholder="Category eg Groceries, Car repair"
+            />
+            <input type="date" name="" id="transaction-date" />
+            <textarea
+              name=""
+              id="transaction-description"
+              placeholder="Description"
+            ></textarea>
+            <button type="submit" class="btn">Add Transaction</button>
+          </form>
+        </div>
+      </section>
+      <section class="not-header" id="cards-container">
+        <div class="search-transcation-container">
+          <form action="" id="search-transcation" autocomplete="off">
+            <input
+              type="text"
+              id="search-transcation-input"
+              placeholder="search for transaction"
+              required
+            />
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="card">
+          <table>
+            <thead>
+              <tr id="card-details">
+                <th>Type</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+        <div class="transaction-summary">
+          <h3 class="h-medium">
+            Income: <span id="income-summary" class="h-big">500000</span>
+          </h3>
+          <h3 class="h-medium">
+            Expenses: <span id="expense-summary" class="h-big">70000</span>
+          </h3>
+          <h3 class="h-medium">
+            Balance: <span id="balance" class="h-big">430000</span>
+          </h3>
+        </div>
+      </section>
+      <section class="not-header hidden" id="edit-transaction-form-section">
+        <button id="close-form"><i class="fa-solid fa-xmark"></i></button>
+        <div class="edit-form-container">
+          <form action="" id="edit-transaction-form" autocomplete="off">
+            <h3 class="h-big">Edit transaction</h3>
+            <!-- <div class="transaction-details">
             <ul class="transaction-details-list"></ul>
           </div> -->
-          <select name="" id="edit-type">
-            <option value="" disabled selected hidden>
-              New transaction type
-            </option>
-            <option value="Income">Income</option>
-            <option value="Expense">Expense</option>
-          </select>
-          <input type="text" placeholder="New Amount" id="edit-amount" />
-          <input type="text" placeholder="New Category" id="edit-category" />
-          <textarea
-            name=""
-            id="edit-description"
-            placeholder="New Description"
-          ></textarea>
-          <button type="submit" class="btn">Edit Transaction</button>
-        </form>
-      </div>
-    </section>
+            <select name="" id="edit-type">
+              <option value="" disabled selected hidden>
+                New transaction type
+              </option>
+              <option value="Income">Income</option>
+              <option value="Expense">Expense</option>
+            </select>
+            <input type="text" placeholder="New Amount" id="edit-amount" />
+            <input type="text" placeholder="New Category" id="edit-category" />
+            <textarea
+              name=""
+              id="edit-description"
+              placeholder="New Description"
+            ></textarea>
+            <button type="submit" class="btn">Edit Transaction</button>
+          </form>
+        </div>
+      </section>
+    </main>
     <script src="./js/index.js"></script>
+    <script src="./js/handleLogin.js"></script>
   </body>
 </html>
