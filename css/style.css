@@ -438,7 +438,7 @@ textarea::placeholder,
   }
  
 }
-@media only screen and (min-width: 641px) and (max-width: 1024px) {
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
   /* Styles for tablets */
   .not-header {
     padding: 50px;
