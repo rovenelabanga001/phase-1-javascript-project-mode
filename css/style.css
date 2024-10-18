@@ -413,3 +413,37 @@ textarea::placeholder,
 .blurred {
   filter: blur(5px);
 }
+@media only screen and (max-width: 480px) {
+  /* Styles for small mobile devices */
+  .not-header {
+    padding: 30px;
+    margin: 80px 50px;
+    font-size: 8px;
+  }
+  .h-big {
+    font-size: 15px;
+  }
+
+  #form-section .form-container form#add-transaction {
+    padding: 0;
+    gap: 20px;
+  }
+  #cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    margin: 80px 40px;
+    font-size: 8px;
+  }
+ 
+}
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  /* Styles for tablets */
+  .not-header {
+    padding: 50px;
+    margin: 80px 100px;
+    border: 1px solid white;
+    box-shadow: 1px 4px 4px 4px gray;
+}
+}

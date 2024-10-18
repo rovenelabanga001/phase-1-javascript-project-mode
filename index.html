@@ -77,7 +77,7 @@
         <h3 class="h-big" id="date-today"></h3>
         <div class="form-container">
           <form action="" method="" id="add-transaction" autocomplete="off">
-            <select name="" id="transaction-type">
+            <select name="" id="transaction-type" required>
               <option value="" disabled selected hidden>
                 Transaction type
               </option>
@@ -88,17 +88,20 @@
               type="number"
               id="transcation-amount"
               placeholder="Amount in Ksh"
+              required
             />
             <input
               type="text"
               id="transaction-category"
               placeholder="Category eg Groceries, Car repair"
+              required
             />
-            <input type="date" name="" id="transaction-date" />
+            <input type="date" name="" id="transaction-date" required/>
             <textarea
               name=""
               id="transaction-description"
               placeholder="Description"
+              required
             ></textarea>
             <button type="submit" class="btn">Add Transaction</button>
           </form>
