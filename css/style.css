@@ -343,7 +343,7 @@ td {
   .edit-form-container
   form#edit-transaction-form
   textarea {
-  width: 80%;
+  width: 70vw;
   border-radius: 10px;
   height: 40px;
   border: 1px solid transparent;
@@ -434,9 +434,15 @@ textarea::placeholder,
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 50px;
-    margin: 80px 40px;
+    padding: 50px 10px;
+    margin: 80px 20px;
     font-size: 8px;
+  }#cards-container .card th, td {
+    padding: 0;
+    text-align: center;
+}
+  #cards-container .card table tbody tr td {
+    font-size: 15px;
   }
   #cards-container .transaction-summary {
     display: flex;
@@ -444,7 +450,8 @@ textarea::placeholder,
     justify-content: center;
     align-items: center;
   }
-  #cards-container .transaction-summary h3,#cards-container .transaction-summary h3 span {
+  #cards-container .transaction-summary h3,
+  #cards-container .transaction-summary h3 span {
     font-size: 15px;
   }
 }
