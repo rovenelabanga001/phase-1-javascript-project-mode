@@ -436,7 +436,11 @@ textarea::placeholder,
     margin: 80px 40px;
     font-size: 8px;
   }
- 
+  #cards-container .transaction-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
   /* Styles for tablets */
@@ -445,5 +449,5 @@ textarea::placeholder,
     margin: 80px 100px;
     border: 1px solid white;
     box-shadow: 1px 4px 4px 4px gray;
-}
+  }
 }
