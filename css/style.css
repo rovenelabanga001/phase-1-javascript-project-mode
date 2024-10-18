@@ -121,7 +121,7 @@ body {
 #form-section .form-container form#add-transaction select,
 #form-section .form-container form#add-transaction input,
 #form-section .form-container form#add-transaction textarea {
-  width: 80%;
+  width: 50vw;
   border-radius: 10px;
   height: 40px;
   border: 1px solid transparent;
@@ -168,7 +168,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  overflow-x: scroll;
   /* width: 100%;
   margin: 80px 0; */
 }
@@ -438,7 +437,6 @@ textarea::placeholder,
     margin: 80px 0;
     font-size: 8px;
   }
-
   #cards-container .card th,
   td {
     padding: 3px;
