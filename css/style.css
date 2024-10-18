@@ -429,6 +429,18 @@ textarea::placeholder,
     padding: 0;
     gap: 20px;
   }
+  #form-section .form-container form#add-transaction select {
+    font-size: 13px;
+  }
+  #form-section .form-container form#add-transaction input,
+  #form-section .form-container form#add-transaction input::placeholder,
+  #form-section .form-container form#add-transaction textarea,
+  #form-section .form-container form#add-transaction textarea::placeholder {
+    font-size: 13px;
+  }
+  #form-section .form-container form#add-transaction button {
+    font-size: 13px;
+  }
   #cards-container {
     display: flex;
     flex-direction: column;
