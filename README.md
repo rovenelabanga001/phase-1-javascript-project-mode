@@ -1,6 +1,6 @@
 # Personal Expenditure Tracker SPA
 
-This is a **Personal Expenditure Tracker** Single Page Application (SPA) built using vanilla JavaScript. The application allows users to track their income and expenses, edit transactions, delete transactions, and view a summary of their transactions. It is designed to store data using [JSONBin.io](https://jsonbin.io), and all interactions with the transaction data are managed via API requests.
+This is a **Personal Expenditure Tracker** Single Page Application (SPA) built using vanilla JavaScript. The application allows users to track their income and expenses, edit transactions, delete transactions, and view a summary of their transactions. It is designed to store data using a JSON server, and all interactions with the transaction data are managed via API requests.
 
 ## Features
 
@@ -16,7 +16,7 @@ This is a **Personal Expenditure Tracker** Single Page Application (SPA) built u
 - **HTML**: For the structure of the application.
 - **CSS**: For styling the application.
 - **JavaScript**: The core logic of the SPA, including DOM manipulation, event handling, and API calls.
-- **JSONBin.io**: A RESTful JSON storage platform used to store and retrieve transaction data.
+- **JSON Server**: A local JSON server to store and retrieve transaction data.
 - **Font Awesome**: For icons used in the application.
 
 ## Getting Started
@@ -26,7 +26,6 @@ This is a **Personal Expenditure Tracker** Single Page Application (SPA) built u
 Before starting, make sure you have the following:
 
 - A modern web browser (Chrome, Firefox, Edge, etc.).
-- A free account on [JSONBin.io](https://jsonbin.io) to create a bin for storing your transactions.
 - A basic understanding of JavaScript and APIs.
 
 ### Setup
@@ -38,22 +37,19 @@ Before starting, make sure you have the following:
     ```
 
 2. **Install Dependencies**:
-   No additional libraries or dependencies are required, as this is a pure vanilla JavaScript project.
+    No additional libraries or dependencies are required, as this is a pure vanilla JavaScript project. The backend already contains the necessary node modules.
 
-3. **Configure the `.env` file**:
-    - Create a `.env` file in the root of your project and store your JSONBin.io **master key** in it.
-
-    Example `.env` file:
+3. **Run the JSON Server**:
     ```bash
-    MASTER_KEY=$2a$10$MHsSpY2gHAq11VZl9Nddm.WlG/dDKeM18xXslTF.E1I7vvkoPAb.y
+    npm install
+    npm run server
     ```
 
-4. **Configure Your JSONBin URL**:
-    - Replace the `baseURL` in the code with your **private JSONBin URL**.
+4. **Configure the base URL**:
+    - The `baseURL` is set to interact with the JSON server API:
 
-    Example:
     ```javascript
-    const baseURL = "https://api.jsonbin.io/v3/b/your-bin-id"; // Your private bin URL
+    const baseURL = "https://phase-1-javascript-project-mode.onrender.com/transactions";
     ```
 
 5. **Run the Application**:
@@ -62,10 +58,16 @@ Before starting, make sure you have the following:
 ## Project Structure
 
 ```bash
+├── backend/
+│   ├── db.json                  # Database file containing transactions
+│   ├── node_modules/            # Node.js dependencies
+│   ├── package-lock.json        # Lock file for package versions
+│   ├── package.json             # List of Node.js dependencies
+│   └── server.js                # Node.js server file
 ├── css/
-│   └── style.css        # Styling for the application
+│   └── style.css                # Styling for the application
 ├── js/
-│   └── script.js        # Main JavaScript file with logic
-├── index.html           # Main HTML file
-├── .env                 # Environment file (not pushed to GitHub)
-└── README.md            # This README file
+│   └── index.js                 # Main JavaScript file with logic
+├── index.html                   # Main HTML file
+├── .gitignore                   # Files to be ignored by Git
+└── README.md                    # This README file 

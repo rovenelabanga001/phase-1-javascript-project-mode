@@ -6,7 +6,7 @@ const createAccountContainer = document.querySelector(
   "#create-account-container"
 );
 
-const baseURL1 = "http://localhost:3000";
+const baseURL1 = "https://phase-1-javascript-project-mode.onrender.com";
 
 document.getElementById("show-create-account").addEventListener("click", () => {
   loginContainer.style.display = "none";
@@ -51,11 +51,8 @@ loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const username = document.querySelector("#enter-username").value;
   const password = document.querySelector("#enter-password").value;
-  const email = document.querySelector("#enter-email").value;
 
-  fetch(
-    `${baseURL1}/users?username=${username}&email=${email}&password=${password}`
-  )
+  fetch(`${baseURL1}/users?username=${username}&password=${password}`)
     .then((response) => response.json())
     .then((users) => {
       if (users.length > 0) {
@@ -78,12 +75,12 @@ function loadUserTransactions(userId) {
     .then((response) => response.json())
     .then((transactions) => {
       //render user's transactions in the table
-      const tableBody = document.querySelector("#table-body");
-      tableBody.innerHTML = ""; //clears the existing transactions
+        const tableBody = document.querySelector("#table-body");
+        tableBody.innerHTML = ""; //clears the existing transactions
 
-      transactions.forEach((transaction) => {
-        renderTransaction(transaction);
-      });
+        transactions.forEach((transaction) => {
+          renderTransaction(transaction);
+        });
     })
     .catch((error) => console.error("Error loading transactions", error));
 }
@@ -104,17 +101,17 @@ document.getElementById("log-out-btn").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   //Check if user is already logged in on page load
-
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (currentUser) {
-      loginContainer.style.display = "none";
-      document.querySelector("main").style.display = "block";
-      loadUserTransactions(currentUser.id);
-
-      const savedFilter = localStorage.getItem("currentFilter");
-      if (savedFilter) {
-        document.querySelector("#search-transcation-input").value = savedFilter;
-      }
-    } else {}
-  document.querySelector("main").style.display = "none"; //hide main content untill login
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser) {
+    loginContainer.style.display = "none";
+    document.querySelector("main").style.display = "block";
+    loadUserTransactions(currentUser.id);
+    const savedFilter = localStorage.getItem("currentFilter");
+    if (savedFilter) {
+      document.querySelector("#search-transcation-input").value = savedFilter;
+    }
+  } else {
+    document.querySelector("main").style.display = "none";
+  }
+  //hide main content untill login
 });
