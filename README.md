@@ -54,6 +54,19 @@ Before starting, make sure you have the following:
 
 5. **Run the Application**:
     - Open the `index.html` file in your browser to view and interact with the expenditure tracker.
+## Live Site
+
+Check out the live version of the project [here](https://rovenelabanga001.github.io/phase-1-javascript-project-mode/).
+
+## Author
+
+- **Rovenel Abanga**  
+  GitHub: [rovenelabanga001](https://github.com/rovenelabanga001)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 ## Project Structure
 
