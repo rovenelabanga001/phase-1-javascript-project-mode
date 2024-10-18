@@ -438,6 +438,15 @@ textarea::placeholder,
     margin: 80px 40px;
     font-size: 8px;
   }
+  #cards-container .transaction-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #cards-container .transaction-summary h3,#cards-container .transaction-summary h3 span {
+    font-size: 15px;
+  }
 }
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
   /* Styles for tablets */
