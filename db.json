@@ -61,18 +61,18 @@
       "description": "Essentials supply"
     },
     {
-      "id": "edfe",
-      "type": "Expense",
-      "amount": "80000",
-      "category": "Fees",
-      "date": "2024-10-18",
-      "description": "Second semester fees"
-    },
-    {
-      "id": "6289",
+      "id": "6d31",
       "type": "Expense",
       "amount": "100000",
-      "category": "loan",
+      "category": "Fees",
+      "date": "2024-10-16",
+      "description": "second semester fees"
+    },
+    {
+      "id": "0129",
+      "type": "Expense",
+      "amount": "90000",
+      "category": "Loan",
       "date": "2024-10-23",
       "description": "Car loan payment"
     }
